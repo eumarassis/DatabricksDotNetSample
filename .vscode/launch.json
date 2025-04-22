@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": ".NET Core Launch (web)",
+        "type": "coreclr",
+        "request": "launch",
+        "program": "${workspaceFolder}/bin/Debug/net8.0/DatabricksOAuthDemo.dll",
+        "preLaunchTask": "dotnet: build",
+        "args": [],
+        "cwd": "${workspaceFolder}",
+        "stopAtEntry": false,
+        "serverReadyAction": {
+          "action": "openExternally",
+          "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+        },
+        "env": {
+          "ASPNETCORE_ENVIRONMENT": "Development",
+          "ASPNETCORE_URLS":        "http://localhost:5098",
+          "DATABRICKS_CLIENT_ID": "[SERVICE PRINCIPAL OR OAUTH APP CLIENT ID]",
+          "DATABRICKS_CLIENT_SECRET": "[SERVICE PRINCIPAL OR OAUTH APP CLIENT SECRET]",
+          "DATABRICKS_REDIRECT_URI": "http://localhost:5098/callback",
+          "DATABRICKS_AUTH_TYPE": "U2M",          
+          "WORKSPACE_URL": "[WORKSPACE URL]",
+          "WAREHOUSE_ID": "[WAREHOUSE ID]"          
+        },
+        "sourceFileMap": {
+          "/Views": "${workspaceFolder}/Views"
+        }
+      },
+    ]
+  }
